@@ -52,3 +52,4 @@ package-lock.json
 .prettierrc
 .prettierignorecomposer.json
 languages/
+README.md
