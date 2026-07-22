@@ -1,38 +1,36 @@
-# Node.js
+# Node
 node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
 # Build outputs
 assets/js/main.min.js
 assets/css/tailwind.css
 assets/css/tailwind.min.css
 *.zip
-
-# System files
+# System
 .DS_Store
 Thumbs.db
-
 # IDE
 .vscode/
-
 # Composer
 vendor/
 composer.lock
-
-# Core synced files (from _core/)
-inc/
+composer.json
+# Languages (build output)
+languages/
+# Docs from core
+README.md
+# Core synced CSS (keep theme.css local)
 assets/css/*
 !assets/css/base/
 assets/css/base/*
 !assets/css/base/theme.css
 assets/js/core.js
 assets/fonts/
-
-# Template files (synced from core)
+# Core synced PHP/templates
+inc/
 template-parts/
-modules/
 header.php
 footer.php
 sidebar.php
@@ -41,8 +39,6 @@ index.php
 comments.php
 functions.php
 page-about-us.php
-
-# Build/config files (synced from core)
 build-js.js
 build.php
 tailwind.config.js
@@ -50,6 +46,6 @@ postcss.config.js
 package.json
 package-lock.json
 .prettierrc
-.prettierignorecomposer.json
-languages/
-README.md
+.prettierignore
+# Shared modules from core
+modules/
