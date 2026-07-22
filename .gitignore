@@ -50,4 +50,5 @@ postcss.config.js
 package.json
 package-lock.json
 .prettierrc
-.prettierignore
+.prettierignorecomposer.json
+languages/
