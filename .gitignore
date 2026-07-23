@@ -20,6 +20,7 @@ composer.json
 # Languages (build output)
 languages/
 # Docs from core
+all_code.txt
 README.md
 # Core synced CSS (keep theme.css local)
 assets/css/*
@@ -47,3 +48,4 @@ postcss.config.js
 .prettierignore
 # Shared modules from core
 modules/
+watch-core.js
