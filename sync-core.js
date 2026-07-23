@@ -8,6 +8,7 @@ const IS_UPDATE = process.argv.includes("--update");
 
 const SKIP = [
   "modules.json",
+  ".gitignore",
   "build-theme.js",
   "style.css",
   "node_modules",
