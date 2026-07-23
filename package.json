@@ -4,7 +4,8 @@
     "dev": "tailwindcss -i ./assets/css/input.css -o ./assets/css/tailwind.css --watch",
     "t-scan": "wp i18n make-pot . languages/twodt.pot --domain=twodt --exclude=node_modules,vendor && powershell -Command \"if (!(Test-Path languages/twodt-en_us.po)) { Copy-Item languages/twodt.pot languages/twodt-en_us.po } ; if (!(Test-Path languages/twodt-ar.po)) { Copy-Item languages/twodt.pot languages/twodt-ar.po }\" && wp i18n update-po languages/twodt.pot languages/twodt-en_us.po && wp i18n update-po languages/twodt.pot languages/twodt-ar.po",
     "t-build": "wp i18n make-mo languages/twodt-en_us.po languages && wp i18n make-mo languages/twodt-ar.po languages",
-    "update-core": "node sync-core.js --update"
+    "update-core": "node sync-core.js --update",
+    "watch": "node watch-core.js"
   },
   "devDependencies": {
     "@prettier/plugin-php": "^0.25.0",
