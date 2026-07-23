@@ -10,7 +10,6 @@ const SKIP = [
   "modules.json",
   "build-theme.js",
   "style.css",
-  "sync-core.js",
   "node_modules",
   ".git",
   "_core",
@@ -72,7 +71,7 @@ sync();
 
 if (IS_UPDATE) {
   console.log("[sync-core] 3/4 commit new core pointer...");
-  run("git add _core");
+  run("git add _core sync-core.js");
   if (!run('git commit -m "update core"')) {
     console.log("[sync-core] (nothing to commit)");
   }
