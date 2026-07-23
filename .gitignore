@@ -43,8 +43,6 @@ build-js.js
 build.php
 tailwind.config.js
 postcss.config.js
-package.json
-package-lock.json
 .prettierrc
 .prettierignore
 # Shared modules from core
