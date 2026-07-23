@@ -11,6 +11,7 @@ const SKIP = [
   ".gitignore",
   "build-theme.js",
   "style.css",
+  "watch-core.js",
   "node_modules",
   ".git",
   "_core",
