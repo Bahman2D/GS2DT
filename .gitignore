@@ -49,3 +49,9 @@ postcss.config.js
 # Shared modules from core
 modules/
 watch-core.js
+
+# vault junction - never commit or deploy this
+brain/
+
+# Core junction
+_core/

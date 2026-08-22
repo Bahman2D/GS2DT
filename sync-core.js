@@ -63,21 +63,10 @@ function sync() {
 }
 
 if (IS_UPDATE) {
-  console.log("[sync-core] 1/4 pull latest core from GitHub...");
-  run("git submodule update --remote _core");
-  console.log("[sync-core] 2/4 put _core on master (avoid detached HEAD)...");
-  run("git -C _core checkout -B master");
+  console.log("[sync-core] pulling latest core via junction...");
+  if (!run("git -C _core pull --ff-only")) {
+    console.log("[sync-core] pull failed (offline or dirty core) — continuing with local copy");
+  }
 }
 
 sync();
-
-if (IS_UPDATE) {
-  console.log("[sync-core] 3/4 commit new core pointer...");
-  run("git add _core sync-core.js");
-  if (!run('git commit -m "update core"')) {
-    console.log("[sync-core] (nothing to commit)");
-  }
-  console.log("[sync-core] 4/4 push to GitHub...");
-  run("git push");
-  console.log("\n[sync-core] update DONE");
-}
