@@ -55,3 +55,11 @@ brain/
 
 # Core junction
 _core/
+# Core synced tooling
+build-css.js
+check-css.js
+package.json
+package-lock.json
+# Tool state (generated per project, not source)
+.sync-core-manifest.json
+.css-baseline.json
