@@ -41,6 +41,7 @@ comments.php
 functions.php
 page-about-us.php
 build-js.js
+build-theme.js
 build.php
 tailwind.config.js
 postcss.config.js
@@ -49,6 +50,7 @@ postcss.config.js
 # Shared modules from core
 modules/
 watch-core.js
+sync-core.js
 
 # vault junction - never commit or deploy this
 brain/
@@ -63,3 +65,7 @@ package-lock.json
 # Tool state (generated per project, not source)
 .sync-core-manifest.json
 .css-baseline.json
+
+# Build output of the view tier
+*.min.css
+check-theme.js
