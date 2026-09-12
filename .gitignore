@@ -69,3 +69,6 @@ package-lock.json
 # Build output of the view tier
 *.min.css
 check-theme.js
+audit-render.js
+check-content.php
+check-render.js

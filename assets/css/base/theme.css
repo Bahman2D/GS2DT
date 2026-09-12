@@ -1,62 +1,93 @@
+/* theme.css v2 — palette audit applied + helper tokens */
 :root {
-  --font-sans:
-    "IRANYekanXVF", "IRANYekanX", -apple-system, BlinkMacSystemFont, "Segoe UI", Tahoma, sans-serif;
+  --font-sans: "IRANYekanXVF","IRANYekanX",-apple-system,BlinkMacSystemFont,"Segoe UI",Tahoma,sans-serif;
+  --font-display: "Lalezar", var(--font-sans);
+}
+:root {
+  /* brand */
+  --primary: #40a7e3;  --primary-strong: #1f7fb8;  --on-primary: #06283f;
+  --secondary: #4a96d6;
+  --accent: #e35a62;  --accent-strong: #c23a44;  --on-accent: #2a0709;
+  /* semantic */
+  --success: #3fae6f;  --on-success: #04291a;
+  --warning: #d98333;  --on-warning: #33190a;
+  --info: #0891b2;     --on-info: #022a33;
+  --danger: #cd6297;    --on-danger: #33081f;
+  /* text — muted FIXED for readability (was #999 = 2.85:1) */
+  --text-primary: #1d2430;  --text-secondary: #3e4653;  --text-muted: #6b7280;
+  --text-inverse: #ffffff;  --text-link: #026096;  --text-accent: #b23d45;
+  /* surfaces */
+  --bg-primary: #eef1f4;  --bg-secondary: #ffffff;  --bg-tertiary: #e2e8f0;  --bg-dark: #161d27;
+  --border-light: rgba(15,23,42,.08);  --border-medium: rgba(15,23,42,.14);
+  --border-dark: rgba(15,23,42,.3);   --border-inverse: rgba(255,255,255,.08);
+  /* helper tints (were scattered inline, now centralized) */
+  --primary-soft: color-mix(in srgb, var(--primary) 12%, transparent);
+  --primary-tint: color-mix(in srgb, var(--primary) 7%, var(--bg-secondary));
+  --accent-soft:  color-mix(in srgb, var(--accent) 11%, transparent);
+  --success-soft: color-mix(in srgb, var(--success) 15%, transparent);
+  --warning-soft: color-mix(in srgb, var(--warning) 15%, transparent);
+  --info-soft:    color-mix(in srgb, var(--info) 13%, transparent);
+  /* gradients + fx */
+  --grad:      linear-gradient(135deg, var(--primary), var(--secondary));
+  --grad-cool: linear-gradient(135deg, var(--primary), var(--info));
+  --grad-warm: linear-gradient(135deg, var(--accent), var(--warning));
+  --shadow: 0 14px 38px -16px rgb(15 23 42 / .28);
+  --shadow-soft: 0 4px 16px -8px rgb(15 23 42 / .18);
+}
+.dark {
+  --primary: #5eb5f7;  --primary-strong: #8fccff;  --on-primary: #04223a;
+  --secondary: #3380c1;
+  --accent: #ef6b73;  --accent-strong: #ff8a91;  --on-accent: #2a0709;
+  --success: #5fc98c;  --on-success: #04291a;
+  --warning: #e89a52;  --on-warning: #33190a;
+  --info: #22b8d6;     --on-info: #022a33;
+  --danger: #d77aa6;    --on-danger: #33081f;
+  --text-primary: #f3f6fa;  --text-secondary: #cbd5e1;  --text-muted: #94a3b8;
+  --text-inverse: #0b121c;  --text-link: #79bdf8;  --text-accent: #ef6b73;
+  --bg-primary: #0d141e;  --bg-secondary: #131c28;  --bg-tertiary: #22303f;  --bg-dark: #cdd6e2;
+  --border-light: rgba(255,255,255,.08);  --border-medium: rgba(255,255,255,.14);
+  --border-dark: rgba(150,187,255,.3);   --border-inverse: rgba(0,0,0,.08);
+  --shadow: 0 18px 44px -16px rgb(0 0 0 / .6);
+  --shadow-soft: 0 6px 20px -10px rgb(0 0 0 / .5);
 }
 
+/* ── motion / elevation / radius — منبع حقیقت رفتار ── */
 :root {
+  --ease: cubic-bezier(.22, 1, .36, 1);   /* تنها منحنی مجاز */
+  --dur: 220ms;                            /* سرعت پایه */
+  --dur-slow: 380ms;                       /* برای پنل/دراور */
+  --lift: -2px;                            /* تنها پرش مجاز هاور */
+
+  --shadow-sm: 0 1px 2px rgb(15 23 42 / .06);
+  --shadow-md: 0 8px 24px -12px rgb(15 23 42 / .22);   /* هاور کارت/دکمه */
+  --shadow-lg: 0 20px 50px -20px rgb(15 23 42 / .35);  /* مودال/اورلی */
+
+  --radius-sm: .375rem;
+  --radius: .5rem;     /* پیش‌فرض دکمه/کارت */
+  --radius-lg: .625rem;
+  --radius-xl: .875rem;
+  --radius-full: 9999px;
+}
+.dark {
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / .3);
+  --shadow-md: 0 10px 28px -12px rgb(0 0 0 / .5);
+  --shadow-lg: 0 24px 60px -20px rgb(0 0 0 / .65);
+}
+
+/* Day palette forced inside dark mode (footer, hero header).
+   Project-owned: retune these to this site's brand. */
+.dark .theme-day-palette {
   --primary: #40a7e3;
+  --primary-strong: #1f7fb8;
+  --on-primary: #06283f;
   --secondary: #4a96d6;
   --accent: #e35a62;
-  --success: #79ca7b;
-  --danger: #cd6297;
-  --warning: #e39552;
-  --info: #06b6d4;
-
-  --text-primary: #222222;
-  --text-secondary: #3e4653;
-  --text-muted: #999999;
+  --accent-strong: #c23a44;
+  --on-accent: #2a0709;
+  --warning: #d98333;
+  --info: #0891b2;
   --text-inverse: #ffffff;
   --text-link: #026096;
-  --text-accent: #b23d45;
-
-  --bg-primary: #f1f1f1;
-  --bg-secondary: #ffffff;
-  --bg-tertiary: #e2e8f0;
-  --bg-dark: #222222;
-  --bg-layer: #f1f1f120;
-  --bg-hover-inverse: #17212b;
-
-  --border-light: rgba(0, 0, 0, 0.08);
-  --border-medium: rgba(0, 0, 0, 0.12);
-  --border-dark: rgba(0, 0, 0, 0.3);
-  --border-inverse: rgba(255, 255, 255, 0.08);
-}
-
-.dark {
-  --primary: #5eb5f7;
-  --secondary: #3380c1;
-  --accent: #e35a62;
-  --success: #79ca7b;
-  --danger: #b64c82;
-  --warning: #e39552;
-  --info: #06b6d4;
-
-  --text-primary: #f5f5f5;
-  --text-secondary: #cbd5e1;
-  --text-muted: #7f91a4;
-  --text-inverse: #0f172a;
-  --text-link: #79bdf8;
-  --text-accent: #e35a62;
-
-  --bg-primary: #0e1621;
-  --bg-secondary: #0a1927;
-  --bg-tertiary: #25303e;
-  --bg-dark: #cecece;
-  --bg-layer: #0e162180;
-  --bg-hover-inverse: #dde4ed;
-
-  --border-light: rgba(255, 255, 255, 0.08);
-  --border-medium: rgba(255, 255, 255, 0.12);
-  --border-dark: rgba(255, 255, 255, 0.3);
-  --border-inverse: rgba(0, 0, 0, 0.08);
+  --border-inverse: rgba(255,255,255,.08);
+  --bg-dark: #161d27;
 }
