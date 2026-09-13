@@ -29,6 +29,7 @@ assets/css/base/*
 !assets/css/base/theme.css
 assets/js/core.js
 assets/fonts/
+assets/lib/
 # Core synced PHP/templates
 inc/
 template-parts/
