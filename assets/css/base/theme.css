@@ -1,4 +1,4 @@
-/* theme.css v2 — palette audit applied + helper tokens */
+/* theme.css v3 — palette audit applied + helper tokens */
 :root {
   --font-sans: "IRANYekanXVF","IRANYekanX",-apple-system,BlinkMacSystemFont,"Segoe UI",Tahoma,sans-serif;
   --font-display: "Lalezar", var(--font-sans);
@@ -17,7 +17,7 @@
   --text-primary: #1d2430;  --text-secondary: #3e4653;  --text-muted: #6b7280;
   --text-inverse: #ffffff;  --text-link: #026096;  --text-accent: #b23d45;
   /* surfaces */
-  --bg-primary: #eef1f4;  --bg-secondary: #ffffff;  --bg-tertiary: #e2e8f0;  --bg-dark: #161d27;
+  --bg-primary: #eef1f4;  --bg-secondary: #ffffff;  --bg-tertiary: #e2e8f0;  --bg-dark: #161d27;  --scrim: #161d27;
   --border-light: rgba(15,23,42,.08);  --border-medium: rgba(15,23,42,.14);
   --border-dark: rgba(15,23,42,.3);   --border-inverse: rgba(255,255,255,.08);
   /* helper tints (were scattered inline, now centralized) */
@@ -44,7 +44,7 @@
   --danger: #d77aa6;    --on-danger: #33081f;
   --text-primary: #f3f6fa;  --text-secondary: #cbd5e1;  --text-muted: #94a3b8;
   --text-inverse: #0b121c;  --text-link: #79bdf8;  --text-accent: #ef6b73;
-  --bg-primary: #0d141e;  --bg-secondary: #131c28;  --bg-tertiary: #22303f;  --bg-dark: #cdd6e2;
+  --bg-primary: #0d141e;  --bg-secondary: #131c28;  --bg-tertiary: #22303f;  --bg-dark: #cdd6e2;  --scrim: #05080d;
   --border-light: rgba(255,255,255,.08);  --border-medium: rgba(255,255,255,.14);
   --border-dark: rgba(150,187,255,.3);   --border-inverse: rgba(0,0,0,.08);
   --shadow: 0 18px 44px -16px rgb(0 0 0 / .6);
