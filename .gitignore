@@ -73,3 +73,4 @@ check-theme.js
 audit-render.js
 check-content.php
 check-render.js
+check-guards.php
